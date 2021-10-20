@@ -1,0 +1,495 @@
+
+<html>
+  <head>
+      <style>
+          @import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
+
+:root {
+--color: #3c3163;
+--transition-time: 0.5s;
+}
+
+* {
+box-sizing: border-box;
+}
+
+body {
+margin: 0;
+min-height: 100vh;
+font-family: 'Open Sans';
+background: #fafafa;
+}
+
+a {
+color: inherit;
+}
+
+.cards-wrapper {
+display: grid;
+justify-content: center;
+align-items: center;
+grid-template-columns: 1fr 1fr 1fr;
+grid-gap: 4rem;
+padding: 4rem;
+margin: 0 auto;
+width: max-content;
+}
+
+.card {
+font-family: 'Heebo';
+--bg-filter-opacity: 0.5;
+background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
+height: 15em;
+width: 15em;
+font-size: 1.5em;
+color: white;
+border-radius: 1em;
+padding: 1em;
+margin: 2em;
+display: flex;
+align-items: flex-end;
+background-size: cover;
+background-position: center;
+box-shadow: 0 0 2em -1em black;
+transition: all, var(--transition-time);
+position: relative;
+overflow: hidden;
+border: 10px solid #ccc;
+text-decoration: none;
+}
+
+.card:hover {
+transform: rotate(0);
+}
+
+.card h1 {
+margin: 0;
+font-size: 1.5em;
+line-height: 1.2em;
+}
+
+.card p {
+font-size: 0.75em;
+font-family: 'Open Sans';
+margin-top: 0.5em;
+line-height: 2em;
+}
+
+.card .tags {
+display: flex;
+}
+
+.card .tags .tag {
+font-size: 0.75em;
+background: rgba(255,255,255,0.5);
+border-radius: 0.3rem;
+padding: 0 0.5em;
+margin-right: 0.5em;
+line-height: 1.5em;
+transition: all, var(--transition-time);
+}
+
+.card:hover .tags .tag {
+background: var(--color);
+color: white;
+}
+
+.card .date {
+position: absolute;
+top: 0;
+right: 0;
+font-size: 0.75em;
+padding: 1em;
+line-height: 1em;
+opacity: .8;
+}
+
+.card:before, .card:after {
+content: '';
+transform: scale(0);
+transform-origin: top left;
+border-radius: 50%;
+position: absolute;
+left: -50%;
+top: -50%;
+z-index: -5;
+transition: all, var(--transition-time);
+transition-timing-function: ease-in-out;
+}
+
+.card:before {
+background: #ddd;
+width: 250%;
+height: 250%;
+}
+
+.card:after {
+background: black;
+width: 200%;
+height: 200%;
+}
+
+.card:hover {
+color: var(--color);
+}
+
+.card:hover:before, .card:hover:after {
+transform: scale(1);
+}
+
+.card-grid-space .num {
+font-size: 3em;
+margin-bottom: 1.2rem;
+margin-left: 1rem;
+}
+
+.info {
+font-size: 1.2em;
+display: flex;
+padding: 1em 3em;
+height: 3em;
+}
+
+.info img {
+height: 3em;
+margin-right: 0.5em;
+}
+
+.info h1 {
+font-size: 1em;
+font-weight: normal;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1285px) {
+.cards-wrapper {
+  grid-template-columns: 1fr 1fr;
+}
+}
+
+@media screen and (max-width: 900px) {
+.cards-wrapper {
+  grid-template-columns: 1fr;
+}
+.info {
+  justify-content: center;
+}
+.card-grid-space .num {
+  margin-left: 0;
+  text-align: center;
+}
+}
+
+@media screen and (max-width: 500px) {
+.cards-wrapper {
+  padding: 4rem 2rem;
+}
+.card {
+  max-width: calc(100vw - 4rem);
+}
+}
+
+@media screen and (max-width: 450px) {
+.info {
+  display: block;
+  text-align: center;
+}
+.info h1 {
+  margin: 0;
+}
+}
+
+
+
+.mySlides {display:none}
+.w3-tag, .fa {cursor:pointer}
+.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+form {
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+margin-top: 6px;
+margin-bottom: 16px;
+resize: vertical;
+}
+
+form p{
+
+color: black;
+}
+.SEND{
+    background: #ff5722;
+  border-color: transparent;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  height: 50px;
+  margin-top: 20px;
+
+}
+
+.SEND:hover
+{
+  background-color:  #45a049;
+  cursor: pointer;
+}
+.copyright{
+text-align: center;
+}
+textarea{
+width: 100%;
+}
+
+
+      </style>
+  </head>
+  <body>
+      <section class="info">
+        </section>
+        <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card" href="https://kvcreator.blogspot.com/2020/11/cse-cgpa.html" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/html-syntax/cover.jpg')">
+              <div>
+                <h1 style="color: white;">CSE</h1>
+                <p style="color: white;">COMPUTER SCIENCE ENGINEERING</p>
+                <div class="tags">
+                  <div style="color: white;" class="tag">CGPA</div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </section>
+        <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card" href="https://kvcreator.blogspot.com/2020/11/it-cgpa.html" style="--bg-img: url('https://s25.postimg.cc/l2q9ujy4f/cta-4.png')">
+              <div>
+                <h1 style="color: white;">IT</h1>
+                <p style="color: white;">INFORMATION TECHNOLOGY</p>
+                <div class="tags">
+                  <div style="color: white;" class="tag">CGPA</div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </section>
+        <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card" href="https://kvcreator.blogspot.com/2021/02/ece.html" style="--bg-img: url('https://1.bp.blogspot.com/-dEX0p4Nz6wM/X7dDJB-P2gI/AAAAAAAAAWI/3dnI8KEtkTEznzbw0JjEQl1KXnolhaSvwCLcBGAsYHQ/s320/pexels-athena-2582937.jpg')">
+              <div>
+                <h1 style="color: white;">ECE</h1>
+                <p style="color: white;"> Electronics and Communications Engineering</p>
+                <div class="tags">
+                  <div style="color: white;" class="tag">CGPA</div>
+                </div>
+              </div>
+            </a>
+          </div>
+         </section>
+         <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card" href="https://kvcreator.blogspot.com/2021/02/eee.html" style="--bg-img: url('https://1.bp.blogspot.com/-UtoHqatqP6I/YCdgYteNnEI/AAAAAAAAAb0/0ecuRfQQS30GWCi_hsfrJZmq4MVYTLaAgCLcBGAsYHQ/s320/pexels-jeremy-waterhouse-3665443.jpg')">
+              <div>
+                <h1 style="color: white;">EEE</h1>
+                <p style="color: white;"> ELECTRICAL AND ELECTRONICS Engineering</p>
+                <div class="tags">
+                  <div style="color: white;" class="tag">CGPA</div>
+                </div>
+              </div>
+            </a>
+          </div>
+         </section>
+         <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card" href="https://kvcreator.blogspot.com/2020/11/aeronautical-cgpa_21.html" style="--bg-img: url('https://1.bp.blogspot.com/-k_Ng-Ck_l3c/X7dGZj40pHI/AAAAAAAAAXA/HQn24hsLKtMgWE8Io42S_t1-6Ly1a3FawCLcBGAsYHQ/s320/pexels-marina-hinic-726233.jpg')">
+              <div>
+                <h1 style="color: white;">AERO</h1>
+                <p style="color: white;">AERONAUTICAL ENGINEERING</p>
+                <div class="tags">
+                  <div style="color: white;" class="tag">CGPA</div>
+                </div>
+              </div>
+            </a>
+          </div>
+         </section>
+         <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card" href="https://kvcreator.blogspot.com/2020/11/automobile-cgpa_21.html" style="--bg-img: url('https://1.bp.blogspot.com/-f6SMvHFqIiY/X7dHstDy-vI/AAAAAAAAAXM/5bu732ltiTkMAZxVQ-_y-kmbrqXATx_4QCLcBGAsYHQ/s320/pexels-pixabay-159293%2B%25281%2529.jpg')">
+              <div>
+                <h1 style="color: white;">AUTO</h1>
+                <p style="color: white;">AUTOMOBILE ENGINEERING</p>
+                <div class="tags">
+                  <div style="color: white;" class="tag">CGPA</div>
+                </div>
+              </div>
+            </a>
+          </div>
+         </section>
+         <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card" href="https://kvcreator.blogspot.com/2020/11/civil-cgpa.html" style="--bg-img: url('https://1.bp.blogspot.com/-RYe-FkChU0E/X7dJfVmZDiI/AAAAAAAAAXw/qR2RmnGktS0Px1Na3sL9F4on39hnT-zYACLcBGAsYHQ/s320/pexels-pixabay-51944.jpg')">
+              <div>
+                <h1 style="color: white;">CIVIL</h1>
+                <p style="color: white;">CIVIL ENGINEERING</p>
+                <div class="tags">
+                  <div style="color: white;" class="tag">CGPA</div>
+                </div>
+              </div>
+            </a>
+          </div>
+         </section>
+         <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card" href="https://kvcreator.blogspot.com/2020/11/electronics-and-instrumentation-cgpa.html" style="--bg-img: url('https://1.bp.blogspot.com/-ujE0NLNQGeU/X7dK8PzzaxI/AAAAAAAAAYE/NwaSROmKzn85f8Wy-3lr9aFAi9m1hGl3gCLcBGAsYHQ/s320/pexels-brett-sayles-4339335.jpg')">
+              <div>
+                <h1 style="color: white;">EIE</h1>
+                <p style="color: white;">ELECTRONICS AND INSTRUMENTATION</p>
+                <div class="tags">
+                  <div style="color: white;" class="tag">CGPA</div>
+                </div>
+              </div>
+            </a>
+          </div>
+         </section>
+         <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card" href="https://kvcreator.blogspot.com/2020/11/electronics-and-telecommunication-cgpa.html" style="--bg-img: url('https://1.bp.blogspot.com/-VaGFzyzfe58/X7j_czTQI4I/AAAAAAAAAZ4/CjqdMcY8c_o9YAqJ01tJb3oUoPZSrOd-wCLcBGAsYHQ/s320/pexels-pixabay-33153.jpg')">
+              <div>
+                <h1 style="color: white;">ETCE</h1>
+                <p style="color: white;">ELECTRONICS AND TELECOMMUNICATION ENGINEERING</p>
+                <div class="tags">
+                  <div style="color: white;" class="tag">CGPA</div>
+                </div>
+              </div>
+            </a>
+          </div>
+         </section>
+         <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card" href="https://kvcreator.blogspot.com/2020/11/mechanical-cgpa_21.html" style="--bg-img: url('https://1.bp.blogspot.com/-VzOse9bgohg/X7dMpwpEPmI/AAAAAAAAAYY/vFcelp_VcwYCjiYvh_eN8rRGjQKB_d_XQCLcBGAsYHQ/s320/pexels-kateryna-babaieva-3784335.jpg')">
+              <div>
+                <h1 style="color: white;">MECH</h1>
+                <p style="color: white;">MECHANICAL ENGINEERING</p>
+                <div class="tags">
+                  <div style="color: white;" class="tag">CGPA</div>
+                </div>
+              </div>
+            </a>
+          </div>
+         </section>
+         <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card" href="https://kvcreator.blogspot.com/2021/02/bsc-physics.html" style="--bg-img: url('https://1.bp.blogspot.com/-WLcOqGBLlsc/YDtu1hYSBdI/AAAAAAAAAcM/ppBEHeMr918sPFzHsQtbZ1yHcfrfzrkSACLcBGAsYHQ/s320/pexels-pixabay-355938.jpg')">
+              <div>
+                <h1 style="color: white;">B.SC.</h1>
+                <p style="color: white;">B.SC. (PHYSICS)</p>
+                <div class="tags">
+                  <div style="color: white;" class="tag">CGPA</div>
+                </div>
+              </div>
+            </a>
+          </div>
+         </section>
+         <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card" href="https://kvcreator.blogspot.com/2020/11/mechatronics-cgpa.html" style="--bg-img: url('https://1.bp.blogspot.com/-VTcBR7fuZog/X7de_Hz_6LI/AAAAAAAAAYs/JHu_hR5V484meDoeeStbNLu87w21JdwmQCLcBGAsYHQ/s320/pexels-pixabay-256381.jpg')">
+              <div>
+                <h1 style="color: white;">MTRON</h1>
+                <p style="color: white;">MECHATRONICS ENGINEERING</p>
+                <div class="tags">
+                  <div style="color: white;" class="tag">CGPA</div>
+                </div>
+              </div>
+            </a>
+          </div>
+         </section>
+         <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card" href="https://kvcreator.blogspot.com/2021/02/bpharmacy.html" style="--bg-img: url('https://1.bp.blogspot.com/-E9h5h7iYxqc/X7dg6GX8-DI/AAAAAAAAAY4/adD573mNemo4sCfzKDStf2szkAkiqw0DgCLcBGAsYHQ/s320/pexels-anna-shvets-3683098.jpg')">
+              <div>
+                <h1 style="color: white;">B</h1>
+                <p style="color: white;">B.PHARMACY</p>
+                <div class="tags">
+                  <div style="color: white;" class="tag">CGPA</div>
+                </div>
+              </div>
+            </a>
+          </div>
+         </section>
+         <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card" href="https://kvcreator.blogspot.com/2021/02/dpharmacy.html" style="--bg-img: url('https://1.bp.blogspot.com/-SKkYpijexUo/X7dhvUmfgJI/AAAAAAAAAZA/gipTUqSiVWU9A2kHT1mOAqzNMijysmbsgCLcBGAsYHQ/s320/pexels-karolina-grabowska-4021819.jpg')">
+              <div>
+                <h1 style="color: white;">D</h1>
+                <p style="color: white;">D.PHARMACY</p>
+                <div class="tags">
+                  <div style="color: white;" class="tag">CGPA</div>
+                </div>
+              </div>
+            </a>
+          </div>
+         </section>
+         <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card" href="https://kvcreator.blogspot.com/2021/02/biomedical-engineering.html" style="--bg-img: url('https://1.bp.blogspot.com/-USSLXxhvlTU/X7di7ZEREuI/AAAAAAAAAZM/HyalEDzNQDooJykAajjlvsZsifCwQKiugCLcBGAsYHQ/s320/pexels-pixabay-356040.jpg')">
+              <div>
+                <h1 style="color: white;">BIO</h1>
+                <p style="color: white;">BIOMEDICAL ENGINEERING</p>
+                <div class="tags">
+                  <div style="color: white;" class="tag">CGPA</div>
+                </div>
+              </div>
+            </a>
+          </div>
+         </section>
+         <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card" href="https://kvcreator.blogspot.com/2021/02/biotechnology.html" style="--bg-img: url('https://1.bp.blogspot.com/-SotlEA0T8Cc/X7djwg52GUI/AAAAAAAAAZU/D__btC4EcA0uU5gEomJt8WejaYQhS8qzQCLcBGAsYHQ/s320/pexels-chokniti-khongchum-2280547.jpg')">
+              <div>
+                <h1 style="color: white;">BIO</h1>
+                <p style="color: white;">BIOTECHNOLOGY</p>
+                <div class="tags">
+                  <div style="color: white;" class="tag">CGPA</div>
+                </div>
+              </div>
+            </a>
+          </div>
+         </section>
+         <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card" href="https://kvcreator.blogspot.com/2021/02/chemical-engineering.html" style="--bg-img: url('https://1.bp.blogspot.com/-iSLHQ2KVWQg/X7dlKZikjqI/AAAAAAAAAZg/pfaUZ1fDvWMj2eXFaGsGab-Wy1DYTkaiQCLcBGAsYHQ/s320/pexels-thisisengineering-3912482.jpg')">
+              <div>
+                <h1 style="color: white;">CHEM</h1>
+                <p style="color: white;">CHEMICAL ENGINEERING</p>
+                <div class="tags">
+                  <div style="color: white;" class="tag">CGPA</div>
+                </div>
+              </div>
+            </a>
+          </div>
+         </section>
+         <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card" href="https://kvcreator.blogspot.com/2020/11/architecture-cgpa.html" style="--bg-img: url('https://1.bp.blogspot.com/-fKBbXsaHZRw/X7fLIZJl_CI/AAAAAAAAAZs/iqmmjxB90JEdfdLvmn44utx_mznxVJJvQCLcBGAsYHQ/s320/pexels-tyler-hendy-52062.jpg')">
+              <div>
+                <h1 style="color: white;">ARCH</h1>
+                <p style="color: white;">ARCHITECTURE</p>
+                <div class="tags">
+                  <div style="color: white;" class="tag">CGPA</div>
+                </div>
+              </div>
+            </a>
+          </div>
+         </section>
+         <section class="cards-wrapper">
+          <div class="card-grid-space">
+            <a class="card"  style="--bg-img: url('https://bit.ly/3635Esj'); height: 30em;">
+              <div>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeLHy6bW3xilFppsYxk28zMZPLWV1uEhsl-ZRR_Oev1ya-6UA/viewform?embedded=true" width="310" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe><br>
+              </div>
+            </a>
+          </div>
+         </section>
+  </body>
+</html>
